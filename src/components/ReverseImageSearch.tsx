@@ -1,5 +1,5 @@
 import React from "react";
-import { Column, Text } from "../common";
+import { Column, Text, FormBox } from "../common";
 import { Box, TextField, Button, Stack } from "@mui/material";
 import styled from "@mui/styled-engine";
 
@@ -12,20 +12,14 @@ const ReverseImageSearch = () => {
     <Column justifyContentDirection="flex-start" width="100%">
       <h2 style={{ margin: "10%" }}>Upload image </h2>
       <h3>Search by URL</h3>
-      <Box
-        component="form"
-        sx={{
-          "& > :not(style)": { m: 1, width: "25ch" },
-        }}
-        noValidate
-        autoComplete="off"
-      >
-        <TextField
-          sx={{ input: { color: "whitesmoke", backgroundColor: "grey" } }}
-          label="paste url"
-        />
+      <FormBox>
+        <TextField label="paste url" />
+      </FormBox>
+      <Box sx={{ textAlign: "center" }}>
+        <Text fontSize="1.1em" bold>
+          - or -
+        </Text>
       </Box>
-      <hr style={{ width: "60%", margin: "5%" }} />
       <h3>Search by file upload </h3>
       <Stack alignItems="center" spacing={3} mt="1%">
         <label htmlFor="contained-button-file">
