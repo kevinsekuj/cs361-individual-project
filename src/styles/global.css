@@ -18,3 +18,23 @@ a {
   all: unset;
   color: rgb(218, 218, 218);
 }
+
+input,
+select,
+textarea {
+  color: whitesmoke !important;
+  width: 100px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea {
+  background-color: rgb(68, 68, 68) !important;
+}
+
+::placeholder {
+  font-style: italic;
+  color: whitesmoke !important;
+  opacity: 0.6;
+}

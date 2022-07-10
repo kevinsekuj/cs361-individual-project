@@ -1,7 +1,7 @@
 import React from "react";
 
 const GetImage = () => {
-  return <div>Image path</div>;
+  return <div></div>;
 };
 
 export default GetImage;
