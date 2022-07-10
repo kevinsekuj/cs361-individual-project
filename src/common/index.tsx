@@ -4,3 +4,4 @@ export { default as Sidebar } from "./Sidebar";
 export { default as MediaCard } from "./MediaCard";
 export { default as Text } from "./Text";
 export { default as FormBox } from "./FormBox";
+export { default as Search } from "./Search";
