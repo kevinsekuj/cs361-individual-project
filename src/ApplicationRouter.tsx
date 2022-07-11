@@ -5,9 +5,10 @@ import { GetImage, GetQuote, ReverseImageSearch } from "./components/index";
 const ApplicationRouter = () => {
   return (
     <Routes>
-      <Route path="/image" element={<GetImage />} />
+      <Route path="/" element={<GetImage />} />
       <Route path="/quote" element={<GetQuote />} />
       <Route path="/trace" element={<ReverseImageSearch />} />
+      <Route path="*" element={<GetImage />} />
     </Routes>
   );
 };

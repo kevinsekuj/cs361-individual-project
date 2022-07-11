@@ -13,7 +13,7 @@ export const SIDEBAR_BUTTONS = [
     content: "Get Image",
     icon: <ImageIcon color="primary" />,
     description: "null",
-    path: "/image",
+    path: "/",
   },
   {
     content: "Get Quote",

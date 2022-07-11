@@ -36,6 +36,9 @@ const ReverseImageSearch = () => {
         <Text fontSize={"1em"} style={{ marginTop: "5%" }}>
           Upload files here
         </Text>
+        <Text fontSize={".9m"}>
+          <strong>NOTE</strong>: Low quality images may yield no results
+        </Text>
       </Stack>
       <Box mt="10%">
         <Button variant="contained" component="button" size="large">
