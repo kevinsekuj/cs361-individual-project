@@ -7,7 +7,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  height: "10%",
+  height: "15%",
   width: "25%",
   bgcolor: "background.paper",
   border: "2px solid #000",
@@ -17,6 +17,7 @@ const style = {
 
 const GetImage = () => {
   const [open, setOpen] = useState(false);
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -52,6 +53,9 @@ const GetImage = () => {
                 </li>
               </ol>
             </Typography>
+            <Button variant="contained" color="warning" onClick={handleClose}>
+              Skip tutorial
+            </Button>
           </Box>
         </Modal>
       </Box>

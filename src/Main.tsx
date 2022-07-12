@@ -1,8 +1,16 @@
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import ApplicationRouter from "./ApplicationRouter";
-import { Sidebar, Column, MediaCard } from "./common/index";
-import { SIDEBAR_BUTTONS, FONT_FAMILY, LI_FONT_SIZE } from "./common/constants";
+
+import { Sidebar, Column, MediaCard, Text } from "./common/index";
+import { NewsDialog } from "./components";
+import {
+  SIDEBAR_BUTTONS,
+  FONT_FAMILY,
+  LI_FONT_SIZE,
+  MEDIA_CARDS,
+} from "./common/constants";
+
 import {
   Grid,
   List,
@@ -13,7 +21,10 @@ import {
   Box,
 } from "@mui/material";
 
+import useWindowSize from "./hooks/useWindowSize";
+
 const Home = () => {
+  const size = useWindowSize();
   return (
     <Box
       display="flex"
@@ -22,7 +33,7 @@ const Home = () => {
       width="100%"
     >
       <Grid container spacing={2} minHeight="80%" width="70%">
-        <Grid item xs={3}>
+        <Grid xs={3}>
           <Column
             alignItemsDirection="flex-start"
             justifyContentDirection="flex-start"
@@ -49,15 +60,11 @@ const Home = () => {
                   </RouterLink>
                 ))}
               </List>
-              <Column mt="10%">
-                <h2> Stuff </h2>
-                <MediaCard />
-              </Column>
             </Sidebar>
           </Column>
         </Grid>
 
-        <Grid item xs={6}>
+        <Grid item lg={9} xl={6}>
           <Column
             justifyContentDirection="flex-start"
             alignItemsDirection="flex-start"
@@ -66,14 +73,25 @@ const Home = () => {
           </Column>
         </Grid>
 
-        <Grid item xs={3}>
-          <Column justifyContentDirection="flex-start">
-            <h2> News </h2>
-            {[...Array(2)].map((el, i) => (
-              <MediaCard key={i} />
-            ))}
-          </Column>
-        </Grid>
+        {size.width > 1536 && (
+          <Grid item xl={3}>
+            <Column justifyContentDirection="space-evenly">
+              <Box display="flex" flexDirection="column" alignItems="center">
+                <h2 style={{ textAlign: "center" }}> News </h2>
+                <NewsDialog />
+                <Text fontSize=".9em">Note: filtering may reload news</Text>
+              </Box>
+              {MEDIA_CARDS.map(card => (
+                <MediaCard
+                  key={card.title}
+                  title={card.title}
+                  description={card.description}
+                  url={card.url}
+                />
+              ))}
+            </Column>
+          </Grid>
+        )}
       </Grid>
     </Box>
   );
