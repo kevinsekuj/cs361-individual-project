@@ -37,7 +37,10 @@ const ReverseImageSearch = () => {
           Upload files here
         </Text>
         <Text fontSize={".9m"}>
-          <strong>NOTE</strong>: Low quality images may yield no results
+          <strong>NOTE</strong>: Low quality images may yield no results. <br />{" "}
+          <br />
+          Upload a higher resolution image to increase chances of a successful
+          search.
         </Text>
       </Stack>
       <Box mt="10%">
